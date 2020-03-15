@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify get access token</title>
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            line-height: 1.6;
+            font-family: Arial,x-locale-body,sans-serif;
+            letter-spacing: -.00278rem;
+            font-size: 1rem;
+        }
+        #accessToken {
+            margin: 15px;
+            font-size: 1.2rem;
+        }
+    </style>
+
+    <main>
+        <h2>Copy and paste to /auth in bot</h2>
+        <hr/>
+        <div id="accessToken"></div>
+    </main>
+
+    <script>
+        const url = new URL(window.location.href)
+        const accessToken = url.searchParams.get('code')
+
+        document.getElementById('accessToken').innerText = `Token ${accessToken}`
+    </script>
+</body>
+</html>
